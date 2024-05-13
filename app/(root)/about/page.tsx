@@ -2,8 +2,32 @@ import Skills from '@/components/Skills';
 import Timeline from '@/components/Timeline';
 import { about, education, work } from '@/utils/data';
 import { Link } from '@nextui-org/react';
-import { BriefcaseBusiness, ExternalLink, SchoolIcon } from 'lucide-react';
+import { BriefcaseBusiness, SchoolIcon } from 'lucide-react';
+import { Metadata } from 'next';
 import React from 'react';
+
+export const metadata: Metadata = {
+    title: "SS Portfolio | About",
+    openGraph: {
+      title: "SS Portfolio | About",
+      url: "https://saadshaikh.vercel.app/about",
+      images: [
+        {
+          url: "https://res.cloudinary.com/dkjo8w9u8/image/upload/v1715601375/Screenshot_2024-05-13_172543_z2juxo.png",
+          alt: "portfolio-logo",
+        },
+      ],
+    },
+    twitter: {
+      title: "SS Portfolio | About",
+      images: [
+        {
+          url: "https://res.cloudinary.com/dkjo8w9u8/image/upload/v1715601375/Screenshot_2024-05-13_172543_z2juxo.png",
+          alt: "portfolio-logo",
+        },
+      ],
+    },
+  };
 
 const Page = () => {
     return (

@@ -3,6 +3,30 @@ import { HeroHighlight, Highlight } from '@/components/UI/HeroHighlight';
 import { about } from '@/utils/data';
 import { Button, Image, Link } from '@nextui-org/react';
 import { ChevronRight, DownloadIcon } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "SS Portfolio | Home",
+    openGraph: {
+      title: "SS Portfolio | Home",
+      url: "https://saadshaikh.vercel.app",
+      images: [
+        {
+          url: "https://res.cloudinary.com/dkjo8w9u8/image/upload/v1715601375/Screenshot_2024-05-13_172543_z2juxo.png",
+          alt: "portfolio-logo",
+        },
+      ],
+    },
+    twitter: {
+      title: "SS Portfolio | Home",
+      images: [
+        {
+          url: "https://res.cloudinary.com/dkjo8w9u8/image/upload/v1715601375/Screenshot_2024-05-13_172543_z2juxo.png",
+          alt: "portfolio-logo",
+        },
+      ],
+    },
+  };
 
 export default function Home() {
     return (
