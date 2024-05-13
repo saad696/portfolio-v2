@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "SS Portfolio | Home",
     openGraph: {
       title: "SS Portfolio | Home",
-      url: "https://saadshaikh.vercel.app",
+      url: "https://sdesaadshaikh.vercel.app",
       images: [
         {
           url: "https://res.cloudinary.com/dkjo8w9u8/image/upload/v1715601375/Screenshot_2024-05-13_172543_z2juxo.png",
