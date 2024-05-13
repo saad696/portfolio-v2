@@ -21,17 +21,21 @@ const BottomBar = () => {
                 <NavbarContent className='w-full' justify='center'>
                     <NavbarItem>
                         <ButtonGroup variant='light' size='lg'>
-                            <Button as={Link} href='/'>
-                                <HomeIcon />
+                            <Button as={Link} href='/' className='block text-center'>
+                                <HomeIcon className='mx-auto' />
+                                <small>Home</small>
                             </Button>
-                            <Button as={Link} href='/about'>
-                                <User2Icon />
+                            <Button as={Link} href='/about' className='block text-center'>
+                                <User2Icon className='mx-auto' />
+                                <small>About</small>
                             </Button>
-                            <Button as={Link} href='/portfolio'>
-                                <BriefcaseBusiness />
+                            <Button as={Link} href='/portfolio' className='block text-center'>
+                                <BriefcaseBusiness className='mx-auto' />
+                                <small>Portfolio</small>
                             </Button>
-                            <Button as={Link} href='/contact'>
-                                <MessageSquare />
+                            <Button as={Link} href='/contact' className='block text-center'>
+                                <MessageSquare className='mx-auto' />
+                                <small>Contact</small>
                             </Button>
                         </ButtonGroup>
                     </NavbarItem>
