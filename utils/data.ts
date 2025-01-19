@@ -31,6 +31,8 @@ export const about = {
             'React Js',
             'Next Js',
             'Redux',
+            'Zustand',
+            'React Query',
             'Angular',
             'Material UI',
             'Ionic Angular',
@@ -47,8 +49,10 @@ export const about = {
             'Redis Caching',
             'Koa Js',
             'Module testing TDD',
+            'Loopback 4',
+            'Postgresql'
         ],
-        tools: ['GIT', 'Github', 'Postman', 'Jira'],
+        tools: ['GIT', 'Github', 'Postman', 'Jira', 'Playwright', 'Storybook'],
         soft: [
             'Team Management',
             'Time management',
@@ -78,9 +82,17 @@ export const education = [
 
 export const work = [
     {
-        title: 'Software Engineer - Trigyn Technologies',
+        title: 'Fullstack Engineering Consultant - Brandlock.io',
+        location: 'Thane, Maharashtra',
+        date: 'Aug 2024 - Present',
+        description: `* **Security Improvements**: Led the sanitization of SQL queries to prevent SQL injection attacks and enhance platform security.
+* **Internal Tools Development & Frontend Migration**: Developed an internal document upload module, streamlining workflows for Quality Assurance and Operations teams with self-service AWS S3 bucket/folder creation. Additionally, spearheaded the migration of the frontend codebase from React v16 to React v19, optimizing development and enhancing code quality.
+* **Cross-functional Collaboration & Performance Optimization**: Collaborated with cross-functional teams to improve features like authentication, dynamic dashboards, and registration/onboarding, achieving a 40% increase in frontend rendering speed, and significantly enhancing platform performance.`,
+    },
+    {
+        title: 'Software Engineer  - Trigyn Technologies',
         location: 'Mumbai, Maharashtra (Remote)',
-        date: 'Oct 2023 - Present',
+        date: 'Oct 2023 - Jul 2024',
         description: `*   **Strategic Project Completion**: **I was specifically recalled to finalize the Visvesvaraya PhD Scheme project**, a formidable undertaking that demanded both resilience and ingenuity. My successful completion of this endeavor positioned me for an **extraordinary opportunity: contributing to a project aligned with the World Health Organization (WHO) - NVBD**. The chance to impact global health outcomes thrilled me, and I eagerly embraced my role in this pivotal initiative.`,
     },
     {
