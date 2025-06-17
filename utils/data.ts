@@ -1,7 +1,7 @@
 export const about = {
     name: 'Saad Shaikh',
     position: 'Fullstack Engineer',
-    bio: `Full Stack Developer & Life Enthusiast: I’m the guy who’s been diving into code for over 3 years, playing around with cool stuff like MERN and MEAN. Whether it’s a startup vibe or the big league MNCs, I’ve been there, leading teams and making clients happy with solid tech solutions. When I’m not coding, you’ll catch me pumping iron, cruising on my bike, or chasing that coffee high. Just a regular day for me, living it up one line of code at a time!`,
+    bio: `Full Stack Developer & Life Enthusiast: I’m the guy who’s been diving into code for about half a decade, playing around with cool stuff like MERN and MEAN. Whether it’s a startup vibe or the big league MNCs, I’ve been there, leading teams and making clients happy with solid tech solutions. When I’m not coding, you’ll catch me pumping iron, cruising on my bike, or chasing that coffee high. Just a regular day for me, living it up one line of code at a time!`,
     socials: {
         linkedIn: 'https://in.linkedin.com/in/saad-shaikh-278452193',
         mail: 'sde.saadshaikh@gmail.com',
