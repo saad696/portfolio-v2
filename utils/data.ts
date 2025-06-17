@@ -15,7 +15,7 @@ export const about = {
         degree: "Bachelor's",
         address: 'Mumbai, Maharashtra',
         interests: 'Gym, Motorcycling, Learning about new things',
-        experience: '3.5 Years',
+        experience: '4 Years',
     },
     skills: {
         frontend: [
