@@ -58,25 +58,25 @@ export const ResumeViewerSimple: React.FC<ResumeViewerSimpleProps> = ({
       <Modal
         isOpen={isOpen}
         onOpenChange={onOpenChange}
-        size="5xl"
+        size="full"
         scrollBehavior="inside"
         classNames={{
-          base: "bg-white dark:bg-gray-900",
-          header: "border-b border-gray-200 dark:border-gray-800",
+          base: "bg-white dark:bg-gray-900 m-0 sm:m-4 max-h-screen",
+          header: "border-b border-gray-200 dark:border-gray-800 px-4 py-3",
           body: "p-0",
-          footer: "border-t border-gray-200 dark:border-gray-800",
+          footer: "border-t border-gray-200 dark:border-gray-800 px-4 py-3",
         }}
       >
         <ModalContent>
           {(onClose) => (
             <>
               <ModalHeader className="flex justify-between items-center">
-                <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                <span className="text-base sm:text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Resume Preview
                 </span>
               </ModalHeader>
               <ModalBody>
-                <div className="w-full h-[70vh] bg-gray-100 dark:bg-gray-950">
+                <div className="w-full h-[60vh] sm:h-[70vh] bg-gray-100 dark:bg-gray-950">
                   <iframe
                     src={`${resumeUrl}#toolbar=1&navpanes=0&scrollbar=1`}
                     className="w-full h-full border-0"
@@ -84,31 +84,37 @@ export const ResumeViewerSimple: React.FC<ResumeViewerSimpleProps> = ({
                   />
                 </div>
               </ModalBody>
-              <ModalFooter className="flex justify-between">
+              <ModalFooter className="flex flex-col sm:flex-row justify-between gap-2">
                 <Button
                   color="secondary"
                   variant="light"
                   onPress={handleOpenInNewTab}
-                  startContent={<ExternalLink size={18} />}
+                  startContent={<ExternalLink size={16} />}
+                  size="sm"
+                  className="w-full sm:w-auto"
                 >
-                  Open in New Tab
+                  <span className="hidden sm:inline">Open in New Tab</span>
+                  <span className="sm:hidden">New Tab</span>
                 </Button>
-                <div className="flex gap-2">
+                <div className="flex gap-2 w-full sm:w-auto">
                   <Button
                     color="danger"
                     variant="light"
                     onPress={onClose}
-                    startContent={<X size={18} />}
+                    startContent={<X size={16} />}
+                    size="sm"
+                    className="flex-1 sm:flex-none"
                   >
                     Close
                   </Button>
                   <Button
                     color="secondary"
                     onPress={handleDownload}
-                    startContent={<DownloadIcon size={18} />}
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 text-white"
+                    startContent={<DownloadIcon size={16} />}
+                    size="sm"
+                    className="bg-gradient-to-r from-purple-600 to-pink-600 text-white flex-1 sm:flex-none"
                   >
-                    Download Resume
+                    Download
                   </Button>
                 </div>
               </ModalFooter>
