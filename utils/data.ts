@@ -12,7 +12,7 @@ export const about = {
         lastname: 'Shaikh',
         email: 'sde.saadshaikh@gmail.com',
         nationality: 'Indian',
-        degree: "Bachelor's",
+        degree: "Bachelor's in Information Technology",
         address: 'Mumbai, Maharashtra',
         interests: 'Gym, Motorcycling, Learning about new things',
         experience: '4 Years',
@@ -85,10 +85,10 @@ export const work = [
         title: 'Fullstack Engineering Consultant - Brandlock.io',
         location: 'Thane, Maharashtra',
         date: 'Aug 2024 - Present',
-        description: `* **Security Improvements**: Led the sanitization of SQL queries to prevent SQL injection attacks and enhance platform security.
-* **Internal Tools Development & Frontend Migration**: Developed an internal document upload module, streamlining workflows for Quality Assurance and Operations teams with self-service AWS S3 bucket/folder creation. Additionally, spearheaded the migration of the frontend codebase from React v16 to React v19, optimizing development and enhancing code quality.
-* **Cross-functional Collaboration & Performance Optimization**: Collaborated with cross-functional teams to improve features like authentication, dynamic dashboards, and registration/onboarding, achieving a 40% increase in frontend rendering speed, and significantly enhancing platform performance.`,
-    },
+        description: `* **Full-Stack Migration & Optimization**: Led frontend migration from React v16 to v19 with TypeScript, React Query, Zustand, and Tailwind, reducing bundle size by 35%. Migrated backend from JavaScript to TypeScript with restructured architecture for improved scalability.
+* **Feature Development & Business Impact**: Built OAuth authentication, dynamic backend-driven dashboards (40% faster rendering, 40% engagement increase), drag-and-drop coupon builder (18% engagement lift), and streamlined onboarding flow (15% conversion rate improvement).
+* **Security & Infrastructure**: Sanitized SQL queries across the platform to prevent injection attacks. Developed AWS S3 document management tool with self-service bucket creation, saving QA and Operations teams significant time.
+* **Cross-functional Leadership**: Collaborated with data, QA, design, and operations teams to deliver features while mentoring developers on modern tech stack and best practices.`},
     {
         title: 'Software Engineer  - Trigyn Technologies',
         location: 'Mumbai, Maharashtra (Remote)',
