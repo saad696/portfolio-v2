@@ -1,7 +1,7 @@
 export const about = {
     name: 'Saad Shaikh',
     position: 'Fullstack Engineer',
-    bio: `Full Stack Developer & Life Enthusiast: I’m the guy who’s been diving into code for about half a decade, playing around with cool stuff like MERN and MEAN. Whether it’s a startup vibe or the big league MNCs, I’ve been there, leading teams and making clients happy with solid tech solutions. When I’m not coding, you’ll catch me pumping iron, cruising on my bike, or chasing that coffee high. Just a regular day for me, living it up one line of code at a time!`,
+    bio: `Full Stack Dev (Specializing in Frontend) with 5 years under my belt, working with MERN and MEAN stacks. I've done everything - from building websites for local restaurants to leading government projects for Digital India and WHO. At Brandlock, I cut bundle sizes by 35%, built drag-and-drop tools that boosted engagement by 18%, and migrated entire tech stacks. When not coding, I'm either at the gym, riding my bike, or grabbing coffee. Love building stuff that actually makes a difference!`,
     socials: {
         linkedIn: 'https://in.linkedin.com/in/saad-shaikh-278452193',
         mail: 'sde.saadshaikh@gmail.com',
@@ -15,7 +15,7 @@ export const about = {
         degree: "Bachelor's in Information Technology",
         address: 'Mumbai, Maharashtra',
         interests: 'Gym, Motorcycling, Learning about new things',
-        experience: '4 Years',
+        experience: '5 Years',
     },
     skills: {
         frontend: [
