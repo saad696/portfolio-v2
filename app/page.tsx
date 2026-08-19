@@ -28,8 +28,9 @@ export default function Home() {
             {/* ---------------------------------------------------- hero -- */}
             <section className="grid grid-cols-1 border-b-[3px] border-paper lg:grid-cols-[1fr_420px]">
                 <div className="px-5 py-9 md:px-8 md:py-12 lg:border-r-[3px] lg:border-paper">
+                    {/* The h1 below already says the role — don't repeat it here. */}
                     <Label className="mb-7 text-muted md:mb-9">
-                        {profile.role} &nbsp;/&nbsp; {profile.stack} &nbsp;/&nbsp;{' '}
+                        {profile.stack} &nbsp;/&nbsp; 5+ years &nbsp;/&nbsp;{' '}
                         Mumbai, IN
                     </Label>
 
@@ -91,7 +92,7 @@ export default function Home() {
             {/* ----------------------------------------------- statement -- */}
             <section className="border-b-[3px] border-paper bg-paper px-5 py-8 text-ink md:px-8 md:py-14">
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-[300px_1fr] md:gap-12">
-                    <Label className="md:pt-2.5">What I actually do</Label>
+                    <Label className="md:pt-2.5">Where the work has landed</Label>
                     <p className="m-0 max-w-[940px] font-disp text-[24px] uppercase leading-[1.15] tracking-[-0.035em] md:text-[40px]">
                         {profile.statement}
                     </p>

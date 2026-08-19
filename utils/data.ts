@@ -15,9 +15,9 @@ export const profile = {
     phone: '+91 70396 92252',
     phoneHref: '+917039692252',
     availability: 'Open to senior full-stack & frontend roles',
-    headline: ['Ships', 'Hard', 'Things'],
+    headline: ['Full', 'Stack', 'Developer'],
     statement:
-        'Scholarship portals for the Government of India. National disease surveillance. Medical crowdfunding. I build software people depend on.',
+        'Government scholarship portals. National disease surveillance. Medical crowdfunding. Fleet compliance and SaaS applications.',
     intro:
         '5+ years designing, building and scaling production web applications across SaaS, crowdfunding and government platforms. Legacy-to-modern migrations, authentication systems, and features that move real numbers.',
     summary: [
