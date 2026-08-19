@@ -1,65 +1,45 @@
 import type { Config } from 'tailwindcss';
-const svgToDataUri = require('mini-svg-data-uri');
-const { nextui } = require('@nextui-org/react');
-const {
-    default: flattenColorPalette,
-} = require('tailwindcss/lib/util/flattenColorPalette');
 
+/**
+ * Brutalist system. Radius 0 and no shadows are enforced by simply not
+ * defining any — the utilities exist in core, but nothing here encourages
+ * them and `borderRadius`/`boxShadow` are pinned to none.
+ */
 const config: Config = {
     content: [
-        './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
         './app/**/*.{js,ts,jsx,tsx,mdx}',
-        './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
     ],
     theme: {
-        container: {
-            center: true,
-            padding: '1.5rem',
-            screens: {
-                '2xl': '1400px',
-            },
-        },
         extend: {
-            backgroundImage: {
-                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-conic':
-                    'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            colors: {
+                ink: '#0A0A0A',
+                paper: '#FFFFFF',
+                flood: '#7C3AED',
+                'flood-soft': '#C4B5FD',
+                rule: '#2E2E2E',
+                muted: '#A3A3A3',
+                dim: '#6B6B6B',
+                signal: '#16A34A',
+                surface: '#141414',
+                hatch: '#1A1A1A',
+            },
+            fontFamily: {
+                disp: ['var(--font-disp)', 'Arial Black', 'sans-serif'],
+                body: ['var(--font-body)', 'system-ui', 'sans-serif'],
+                mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+            },
+            letterSpacing: {
+                label: '0.14em',
+                'label-sm': '0.1em',
+                'label-lg': '0.16em',
+            },
+            maxWidth: {
+                measure: '65ch',
             },
         },
     },
-    darkMode: 'class',
-    plugins: [
-        nextui(),
-        addVariablesForColors,
-        function ({ matchUtilities, theme }: any) {
-            matchUtilities(
-                {
-                    'bg-dot-thick': (value: any) => ({
-                        backgroundImage: `url("${svgToDataUri(
-                            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`
-                        )}")`,
-                    }),
-                },
-                {
-                    values: flattenColorPalette(theme('backgroundColor')),
-                    type: 'color',
-                }
-            );
-        },
-    ],
+    plugins: [],
 };
-
-// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
-function addVariablesForColors({ addBase, theme }: any) {
-    let allColors = flattenColorPalette(theme('colors'));
-    let newVars = Object.fromEntries(
-        Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-    );
-
-    addBase({
-        ':root': newVars,
-    });
-}
 
 export default config;

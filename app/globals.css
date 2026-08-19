@@ -2,22 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    scroll-behavior: smooth;
-    overflow-x: hidden !important;
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        background: theme('colors.ink');
+        color: theme('colors.paper');
+        font-family: theme('fontFamily.body');
+        overflow-x: hidden;
+    }
+
+    /* Brutalist non-negotiable: nothing is soft. */
+    *,
+    *::before,
+    *::after {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* The one exception — status dots read as dots, not squares. */
+    .dot {
+        border-radius: 9999px;
+    }
+
+    ::selection {
+        background: theme('colors.flood');
+        color: theme('colors.paper');
+    }
+
+    :focus-visible {
+        outline: 2px solid theme('colors.flood');
+        outline-offset: 2px;
+    }
 }
 
-.timeline-desc > ul {
-    list-style-type: disc !important;
+@layer components {
+    /* Diagonal hatch used behind image placeholders. */
+    .hatch {
+        background-image: repeating-linear-gradient(
+            45deg,
+            theme('colors.hatch') 0px,
+            theme('colors.hatch') 1px,
+            transparent 1px,
+            transparent 10px
+        );
+    }
+
+    /* Horizontal scanlines over the portrait slab. */
+    .scanlines {
+        background-image: repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.22) 0px,
+            rgba(0, 0, 0, 0.22) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+    }
 }
 
-.no-visible-scrollbar {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  
-  .no-visible-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

@@ -1,282 +1,291 @@
-export const about = {
+/**
+ * Single source of truth for every fact on the site.
+ * Mirrors Saad_Shaikh_Resume_Latest.pdf — keep the two in sync.
+ *
+ * Bullet strings use `**bold**` for emphasis; `renderEmphasis` in
+ * `utils/emphasis.tsx` turns it into <strong>. No markdown dependency.
+ */
+
+export const profile = {
     name: 'Saad Shaikh',
-    position: 'Fullstack Engineer',
-    bio: `Full Stack Dev (Specializing in Frontend) with 5 years under my belt, working with MERN and MEAN stacks. I've done everything - from building websites for local restaurants to leading government projects for Digital India and WHO. At Brandlock, I cut bundle sizes by 35%, built drag-and-drop tools that boosted engagement by 18%, and migrated entire tech stacks. When not coding, I'm either at the gym, riding my bike, or grabbing coffee. Love building stuff that actually makes a difference!`,
+    role: 'Full Stack Developer',
+    stack: 'React · TypeScript · Node.js',
+    location: 'Mumbai, India',
+    email: 'sde.saadshaikh@gmail.com',
+    phone: '+91 70396 92252',
+    phoneHref: '+917039692252',
+    availability: 'Open to senior full-stack & frontend roles',
+    headline: ['Ships', 'Hard', 'Things'],
+    statement:
+        'I take production systems nobody wants to touch — and rebuild them without breaking what already works.',
+    intro:
+        '5+ years designing, building and scaling production web applications across SaaS, crowdfunding and government platforms. Legacy-to-modern migrations, authentication systems, and features that move real numbers.',
+    summary: [
+        'Full Stack Developer with 5+ years designing, building and scaling production web applications in React, TypeScript, Node.js and PostgreSQL across SaaS, crowdfunding and government platforms.',
+        'Tech lead experienced in mentoring, 5-developer team leadership and direct client management. Off-keyboard: gym, motorcycles, and good coffee.',
+    ],
     socials: {
         linkedIn: 'https://in.linkedin.com/in/saad-shaikh-278452193',
-        mail: 'sde.saadshaikh@gmail.com',
+        linkedInLabel: 'saad-shaikh-278452193',
         github: 'https://github.com/saad696',
-    },
-    details: {
-        firstname: 'Saad',
-        lastname: 'Shaikh',
-        email: 'sde.saadshaikh@gmail.com',
-        nationality: 'Indian',
-        degree: "Bachelor's in Information Technology",
-        address: 'Mumbai, Maharashtra',
-        interests: 'Gym, Motorcycling, Learning about new things',
-        experience: '5 Years',
-    },
-    skills: {
-        frontend: [
-            'HTML',
-            'CSS',
-            'Scss',
-            'Bootstrap',
-            'Tailwind',
-            'Javascript',
-            'ES6',
-            'Typescript',
-            'jQuery',
-            'React Js',
-            'Next Js',
-            'Redux',
-            'Zustand',
-            'React Query',
-            'Angular',
-            'Material UI',
-            'Ionic Angular',
-            'Ant Design',
-            'Framer Motion',
-        ],
-        backend: [
-            'Node Js',
-            'Express Js',
-            'Strapi',
-            'MongoDB',
-            'Firebase',
-            'Microservices (Basics)',
-            'Redis Caching',
-            'Koa Js',
-            'Module testing TDD',
-            'Loopback 4',
-            'Postgresql'
-        ],
-        tools: ['GIT', 'Github', 'Postman', 'Jira', 'Playwright', 'Storybook'],
-        soft: [
-            'Team Management',
-            'Time management',
-            'Client/Stakeholders Interactions',
-            'Leadership',
-            'Communication',
-            'Critical/Analytical Thinking',
-            'Conflict Resolution',
-        ],
+        githubLabel: 'github.com/saad696',
     },
 };
 
+export const metrics = [
+    { value: '−35%', label: 'Bundle size', detail: 'React 16 → 18' },
+    { value: '65%', label: 'KYC completion', detail: 'up from 6%' },
+    { value: '80%', label: 'Faster renders', detail: 'dynamic dashboards' },
+    { value: '05', label: 'Developers led', detail: 'Govt. of India portal' },
+];
+
+export const skills = [
+    {
+        category: 'Frontend',
+        items: [
+            'React',
+            'Next.js',
+            'TypeScript',
+            'JavaScript (ES6+)',
+            'Redux',
+            'React Query',
+            'Zustand',
+            'Angular',
+            'HTML5',
+            'CSS3',
+            'SCSS',
+            'Tailwind CSS',
+            'Material UI',
+            'Ant Design',
+            'Framer Motion',
+        ],
+    },
+    {
+        category: 'Backend & databases',
+        items: [
+            'Node.js',
+            'Express.js',
+            'Koa.js',
+            'LoopBack 4',
+            'Strapi',
+            'REST APIs',
+            'OAuth 2.0 / OIDC',
+            'RBAC',
+            'PostgreSQL',
+            'MongoDB',
+            'Redis',
+            'Firebase',
+            'BullMQ',
+        ],
+    },
+    {
+        category: 'Cloud & DevOps',
+        items: [
+            'AWS S3',
+            'CloudFront',
+            'Docker',
+            'CI/CD',
+            'GitHub Actions',
+            'Vite',
+            'New Relic (APM)',
+            'Git',
+        ],
+    },
+    {
+        category: 'Testing & practices',
+        items: [
+            'Jest',
+            'Playwright',
+            'TDD',
+            'Agile / Scrum',
+            'Code Review',
+            'System Design',
+            'Mentoring',
+        ],
+    },
+];
+
+export interface Role {
+    company: string;
+    title: string;
+    period: string;
+    /** The current role, rendered as a purple flood block. */
+    current?: boolean;
+    bullets: string[];
+}
+
+export const experience: Role[] = [
+    {
+        company: 'Brandlock',
+        title: 'Software Engineering Consultant',
+        period: 'Aug 2024 — Present',
+        current: true,
+        bullets: [
+            'Own full-stack delivery across 5 repos (React/TypeScript, Node.js/Express, PostgreSQL) — **~1,000 commits, top-2 contributor on four**.',
+            'Migrated the client dashboard from React 16 to React 18 + TypeScript on Vite (React Query, Zustand, Tailwind), **cutting bundle size 35%**; rebuilt the Express backend in TypeScript with strict layering that **eliminated the SQL injection surface platform-wide**.',
+            'Unified 3 duplicate auth implementations into a **contract-first npm package family (v2.10.x) serving 3 production apps** — OAuth2/OIDC SSO, MFA, magic links, RBAC and full security hardening, shipped flag-gated.',
+            'Built the Coupon Template Builder from zero as a shared React/TS library (drag-and-drop canvas, 7-state publish workflow) driving an **18% engagement lift**; also shipped dynamic dashboards (**80% faster renders**) and self-serve onboarding (**+15% conversion**).',
+            'Strengthened platform reliability with BullMQ queues, Redis caching, S3/CloudFront pipelines, New Relic APM and CI/CD; fixed stale-chunk deploy failures via a deployment-registry system while mentoring across data, QA and design.',
+        ],
+    },
+    {
+        company: 'Trigyn Technologies',
+        title: 'Software Engineer',
+        period: 'Oct 2023 — Jul 2024',
+        bullets: [
+            '**Recalled by the company** to deliver critical functionality for the Visvesvaraya PhD Scheme portal (Ministry of Electronics & IT, Govt. of India) under tight deadlines.',
+            '**Selected for the WHO NVBDCP** (National Vector Borne Disease Control Programme) project, building modules for national health data management and disease surveillance.',
+        ],
+    },
+    {
+        company: 'Impactguru',
+        title: 'Software Engineer II',
+        period: 'May 2023 — Oct 2023',
+        bullets: [
+            'Increased KYC document-upload completion **from 6% to 65%** by re-architecting the KYC module with improved UX flow and error handling.',
+            'Cut fundraiser listing and performance page load times by **8%** and reduced fundraiser-creation failures by **10%** through frontend optimization and API improvements.',
+            'Built end-to-end fundraiser creation flows for NGOs, personal causes and creative projects, and integrated the **Sendbird SDK** for in-app user–admin chat; delivered in 2-week Agile sprints.',
+        ],
+    },
+    {
+        company: 'Trigyn Technologies',
+        title: 'Software Engineer',
+        period: 'Dec 2021 — Apr 2023',
+        bullets: [
+            '**Led a 5-developer team** building Digital India Corporation’s nationwide scholarship platform; architected National Single Sign-On (NSSO / Meri Pehchaan) authentication, proposal workflows, payment gateway and student portal.',
+            'Managed direct client communications for requirements gathering, technical guidance and iterative releases; **promoted from Associate to Full Stack Software Engineer** based on project leadership.',
+        ],
+    },
+    {
+        company: 'Lirctek',
+        title: 'Frontend Engineer',
+        period: 'Jul 2021 — Dec 2021',
+        bullets: [
+            'Rebuilt the **Electronic Logging Device (ELD) module — 9 submodules** spanning live map tracking, data visualization, time management and compliance reporting — for a fleet-management platform serving trucking companies.',
+            'Led responsive-design implementation across the platform and supported technical hiring through candidate interviews and evaluations.',
+        ],
+    },
+];
+
+export interface Project {
+    slug: string;
+    name: string;
+    /** Rendered on two lines when it contains a newline. */
+    tags: string[];
+    description: string;
+    stack: string;
+    /** Landscape screenshot. Null renders the hatched placeholder slab. */
+    image: string | null;
+    liveUrl?: string;
+    liveLabel?: string;
+}
+
+export const projects: Project[] = [
+    {
+        slug: 'vikinx',
+        name: 'VikinX',
+        tags: ['Founder', 'Full stack'],
+        description:
+            'Motorcycle community platform built with Next.js 14 — separate client and admin portals for riders to connect, track rides and manage communities, with integrated safety features and route management. Founded it, built it, shipped it.',
+        stack: 'Next.js 14 · React 18 · TypeScript · Node · Express · Firebase · Cloudinary',
+        image: '/projects-ss/vx1.png',
+        liveUrl: 'https://vikinx.in',
+        liveLabel: 'vikinx.in',
+    },
+    {
+        slug: 'brandlock',
+        name: 'Brandlock',
+        tags: ['Consultant', 'Full stack'],
+        description:
+            'Full-stack delivery across 5 repos. Migrated the client dashboard React 16 → 18 on Vite (−35% bundle), rebuilt the Express backend in TypeScript eliminating the SQL injection surface, and unified 3 duplicate auth implementations into one contract-first package family serving 3 production apps.',
+        stack: 'React · TypeScript · Express · PostgreSQL · Redis · BullMQ · AWS · Docker',
+        image: '/projects-ss/bl-1.png',
+    },
+    {
+        slug: 'visvesvaraya-phd',
+        name: 'Visvesvaraya PhD Scheme',
+        tags: ['Govt. of India', 'Team lead — 5 devs'],
+        description:
+            'Digital India Corporation’s nationwide PhD scholarship platform for the Ministry of Electronics & IT. Architected National Single Sign-On (NSSO / Meri Pehchaan), proposal workflows, payment gateway and the student portal — and managed the client relationship directly.',
+        stack: 'Angular · TypeScript · Angular Material · Ionic · Strapi',
+        image: '/projects-ss/ps1.png',
+        liveUrl: 'http://phd.digitalindiacorporation.in',
+        liveLabel: 'phd.digitalindiacorporation.in',
+    },
+    {
+        slug: 'impactguru',
+        name: 'Impactguru',
+        tags: ['Engineer II', 'Frontend'],
+        description:
+            'India-wide crowdfunding platform for NGOs, medical fundraisers and personal causes. Re-architected the KYC module — document completion 6% → 65% — built end-to-end fundraiser creation flows, and integrated Sendbird for in-app user–admin chat.',
+        stack: 'React · SCSS · Bootstrap · Sendbird · PHP · MySQL · Redis',
+        image: '/projects-ss/ig-1.png',
+        liveUrl: 'https://impactguru.com',
+        liveLabel: 'impactguru.com',
+    },
+    {
+        slug: 'e-trucking-soft',
+        name: 'E-Trucking Soft',
+        tags: ['Frontend'],
+        description:
+            'Fleet-management platform for trucking companies. Rebuilt the Electronic Logging Device module — 9 submodules spanning live map tracking, data visualization, time management and compliance reporting — and led responsive-design implementation across the platform.',
+        stack: 'React · TypeScript · Ant Design · React Leaflet · Moment',
+        image: null,
+        liveUrl: 'https://ets.etruckingsoft.com',
+        liveLabel: 'ets.etruckingsoft.com',
+    },
+    {
+        slug: 'graphyl-solutions',
+        name: 'Graphyl Solutions',
+        tags: ['Client work', 'Full stack'],
+        description:
+            'Marketing and lead-generation site for a web development studio — ten routes covering services, portfolio, pricing and consultation booking. Built on Next.js with Tailwind and shadcn/ui: a monthly/yearly pricing toggle, collapsible FAQ, a five-step process walkthrough, testimonials, contact and newsletter capture, and a light/dark theme.',
+        stack: 'Next.js · TypeScript · Tailwind CSS · shadcn/ui · Radix · Vercel',
+        image: '/projects-ss/gs-1.png',
+        liveUrl: 'https://graphylsolutions.com',
+        liveLabel: 'graphylsolutions.com',
+    },
+    {
+        slug: 'genconnect',
+        name: 'Genconnect',
+        tags: ['Freelance', 'Full stack'],
+        description:
+            'Digital marketing agency site built solo, end-to-end — React frontend, Strapi CMS, MySQL — with a fully dynamic blog the client manages themselves through the CMS.',
+        stack: 'React · TypeScript · Ant Design · Strapi · MySQL',
+        image: '/projects-ss/gc1.png',
+        liveUrl: 'http://genconnectdigital.com',
+        liveLabel: 'genconnectdigital.com',
+    },
+];
+
+export const earlierProjects = [
+    {
+        slug: 'khooobsooorat',
+        name: 'Khooobsooorat',
+        description:
+            'Beauty-product review site — influencer reviews, launches and partner-brand offers.',
+        stack: 'HTML · SCSS · jQuery',
+        liveUrl: 'https://khooobsooorat.com',
+    },
+    {
+        slug: 'al-nizami-darbar',
+        name: 'Al Nizami Darbar',
+        description:
+            'Four-page static restaurant site with Maps, YouTube and Instagram feed integrations.',
+        stack: 'HTML · CSS · Bootstrap',
+        liveUrl: 'https://alnizamidarbar.com',
+    },
+];
+
 export const education = [
     {
-        title: 'Bsc. Information Technology',
-        location: 'Mumbai University',
-        date: '2019 - 2021',
-        description: '',
+        degree: 'B.Sc. Information Technology',
+        institution: 'Mumbai University',
+        period: '2019 — 2021',
     },
     {
-        title: 'Diploma - Computer Engineering',
-        location: 'Maharashtra State Board of Technical Education ',
-        date: '2016 - 2019',
-        description: '',
-    },
-];
-
-export const work = [
-    {
-        title: 'Fullstack Engineering Consultant - Brandlock.io',
-        location: 'Thane, Maharashtra',
-        date: 'Aug 2024 - Present',
-        description: `* **Full-Stack Migration & Optimization**: Led frontend migration from React v16 to v19 with TypeScript, React Query, Zustand, and Tailwind, reducing bundle size by 35%. Migrated backend from JavaScript to TypeScript with restructured architecture for improved scalability.
-* **Feature Development & Business Impact**: Built OAuth authentication, dynamic backend-driven dashboards (40% faster rendering, 40% engagement increase), drag-and-drop coupon builder (18% engagement lift), and streamlined onboarding flow (15% conversion rate improvement).
-* **Security & Infrastructure**: Sanitized SQL queries across the platform to prevent injection attacks. Developed AWS S3 document management tool with self-service bucket creation, saving QA and Operations teams significant time.
-* **Cross-functional Leadership**: Collaborated with data, QA, design, and operations teams to deliver features while mentoring developers on modern tech stack and best practices.`},
-    {
-        title: 'Software Engineer  - Trigyn Technologies',
-        location: 'Mumbai, Maharashtra (Remote)',
-        date: 'Oct 2023 - Jul 2024',
-        description: `*   **Strategic Project Completion**: **I was specifically recalled to finalize the Visvesvaraya PhD Scheme project**, a formidable undertaking that demanded both resilience and ingenuity. My successful completion of this endeavor positioned me for an **extraordinary opportunity: contributing to a project aligned with the World Health Organization (WHO) - NVBD**. The chance to impact global health outcomes thrilled me, and I eagerly embraced my role in this pivotal initiative.`,
-    },
-    {
-        title: 'Software Engineer L2 - Impactguru Crowdfunding Platform',
-        location: 'Mumbai, Maharashtra',
-        date: 'May 2023 - Oct 2023',
-        description: `
-*   **Led as Software Engineer 2 at a dynamic crowdfunding platform**, driving improvements in KYC, fundraiser listing, and performance pages, as well as NGO, personal cause, and creative idea fundraiser creation whilst following agile methodology daily scrums and 15 days sprints.
-*   Strategically revamped the KYC module, **increasing document upload rates from 6% to an impressive 65%**.
-*   Enhanced load time and efficiency of fundraiser listing and performance page, resulting in an 8% improvement, while **reducing fundraiser creation failure rates by 10%**, significantly boosting overall efficiency.
-        `,
-    },
-    {
-        title: 'Code Instructor - Vocab Coderz',
-        location: 'Mumbai, Maharashtra',
-        date: 'Mar 2023 - Jul 2023',
-        description: `*   As a Code Instructor, I teach front-end technologies like HTML5, CSS3, Bootstrap, JavaScript, React.js, Antd, GitHub, and TypeScript. My goal is to prepare students for the job market by making them proficient in these technologies.`,
-    },
-    {
-        title: 'Software Engineer - Trigyn Technologies',
-        location: 'Mumbai, Maharashtra (Remote)',
-        date: 'Dec 2021 - Apr 2023',
-        description: `*   **I moved up from an Associate to a Full Stack Software Engineer at Trigyn**. They trusted me to **lead a project** right from the start. We built a Scholarship portal for the Digital India Corporation. 
-*   My role included handling authentication, proposal workflows, payment systems, and managing the student portal. **I also made sure the National Single Sign-On (NSSO) - (Meri Pehchaan) was seamlessly integrated**.
-*   Plus, **I led a team of 5 developers** and **worked closely with clients** to refine project requirements. It was an exciting journey!`,
-    },
-    {
-        title: 'Frontend Engineer - Lirctek',
-        location: 'WhiteField, Bangalore (Remote)',
-        date: 'Jul 2021 - Nov 2021',
-        description: `
-*   **Played a pivotal role as a React JS Developer in a leading product-based company**, contributing significantly to ”e trucking soft,” a comprehensive fleet management system for trucking companies and drivers.
-*   Successfully addressed and **revamped the complex ”eld” module, consisting of 9 submodules**, which included map integration, graphical representation, time management, data tables, and forms, effectively resolving bugs and improving functionality.
-*   **Led UI enhancements across the project to ensure project-wide responsiveness**, while also conducting technical interview rounds to evaluate potential candidates.
-        `,
-    },
-];
-
-export const projects = [
-    {
-        projectName: 'Al Nizami Darbar',
-        projectDesc:
-            'Developed an static restaurant website with four pages which are Home, About us, Menu, Contact us. Integrated Google Maps location, YouTube Video, Instagram Feed, Social Media Re-directs.',
-        projectThumbnail: '/projects-ss/pl1.png',
-        duration: '3 Months',
-        techstack: 'HTML5, CSS3, Javascript, MD Bootstrap',
-        workDone: 'Frontend',
-        hostedUrl: 'https://alnizamidarbar.com',
-        association: 'Sagartech Technical Solutions',
-        images: [
-            '/projects-ss/nd1.png',
-            '/projects-ss/nd2.png',
-            '/projects-ss/nd3.png',
-            '/projects-ss/nd4.png',
-            '/projects-ss/nd5.png',
-        ],
-    },
-    {
-        projectName: 'Khooobsooorat',
-        projectDesc:
-            'Beauty products reviewing website. Products reviwed by influencers and then the reviwes is displayed on the website for the users. Also Latest products launch details with offers directly from the partnered brands.',
-        projectThumbnail: '/projects-ss/pl2.png',
-        duration: '3.5 Months',
-        techstack: 'HTML5, SCSS, Javascript, JQuery, MD Bootstrap',
-        workDone: 'Frontend',
-        hostedUrl: 'https://khooobsooorat.com',
-        association: 'Sagartech Technical Solutions',
-        images: [
-            '/projects-ss/kbs1.png',
-            '/projects-ss/kbs2.png',
-            '/projects-ss/kbs3.png',
-            '/projects-ss/kbs4.png',
-            '/projects-ss/kbs5.png',
-        ],
-    },
-    {
-        projectName: 'E Trucking Soft',
-        projectDesc:
-            'E-Trucking Soft provides a web-based transportation management system. The system can be used for managing fleet operations, communication with drivers, get driving feedback like speeding, expense tracking and fuel logs, invoice generation and handling of preventive maintenance including inspections, and repairs. Customers can also post loads on different loadboards including Truckstop.com, DAT, and PostEverywhere. Additional features include e-logs, tracking, accounting and reports.',
-        projectThumbnail: '/projects-ss/pl3.png',
-        duration: '6 Months',
-        techstack:
-            'React Js, Typescript, Ant Design, Moment Js, React Leaflet Maps, GIT',
-        workDone: 'Frontend',
-        hostedUrl: 'https://ets.etruckingsoft.com',
-        association: 'Taraiwa (formerly Lirctek)',
-        images: [],
-    },
-    {
-        projectName: 'Visvesvaraya PhD Scheme for Electronics & IT',
-        projectDesc:
-            'Ministry of Electronics & Information Technology (MeitY), Government of India has conceived a scheme to enhance the number of PhDs in the Electronic Design and Manufacturing (ESDM) and IT/IT enabled Services (ITES) sector. Cabinet Committee on Economic Affairs (CCEA) has approved the scheme over a period of nine years.',
-        projectThumbnail: '/projects-ss/pl4.png',
-        duration: '1.5 Year',
-        techstack: 'Typescript, Angular, Angular material, Ionic, Strapi, GIT',
-        hostedUrl: 'http://phd.digitalindiacorporation.in',
-        association: 'Trigyn Technologies',
-        images: [
-            '/projects-ss/ps1.png',
-            '/projects-ss/ps2.png',
-            '/projects-ss/ps3.png',
-            '/projects-ss/ps4.png',
-            '/projects-ss/ps5.png',
-            '/projects-ss/ps6.png',
-            '/projects-ss/ps7.png',
-            '/projects-ss/ps8.png',
-        ],
-    },
-    {
-        projectName: 'Genconnect Digital',
-        projectDesc:
-            'Genconnect Digital is a digital marketing firm for which I have developed the entire application using React, Strapi, MySql. Which is a completely dynamic website with entire blog fucntionality embedded in it.',
-        projectThumbnail: '/projects-ss/pl5.png',
-        duration: '3 Months',
-        techstack: 'Typescript, React, Ant Design, Strapi, GIT, MySQL',
-        workDone: 'FullStack',
-        hostedUrl: 'http://genconnectdigital.com',
-        association: 'Freelance',
-        images: [
-            '/projects-ss/gc1.png',
-            '/projects-ss/gc2.png',
-            '/projects-ss/gc3.png',
-            '/projects-ss/gc4.png',
-            '/projects-ss/gc5.png',
-        ],
-    },
-    {
-        projectName: 'Impactguru Crowdfunding Platform',
-        projectDesc:
-            'Impactguru is an online fundraising platform that empowers people, like you, to give to non-profits, individual causes, social enterprises, and start-ups. Our crowdfunding platform allows you to easily raise money online from individuals and organizations that share your passion, each making small donations that add up to a lot, in turn addressing critical social challenges in India.',
-        projectThumbnail: '/projects-ss/pl6.png',
-        duration: '6 Months',
-        techstack: 'React, Bootstrap, Scss, GIT, Github, PHP, MySQL, Redis',
-        workDone: 'Frontend',
-        hostedUrl: 'http://impactguru.com',
-        association: 'Impactguru Crowdfunding Platform',
-        images: [
-            '/projects-ss/ig-1.png',
-            '/projects-ss/ig-2.png',
-            '/projects-ss/ig-3.png',
-            '/projects-ss/ig-4.png',
-            '/projects-ss/ig-5.png',
-        ],
-    },
-    {
-        projectName: 'Dhaage',
-        projectDesc:
-            'Dhaage is a modern and minimalist social media app inspired by Threads, a text-based platform by Meta. Dhaage lets you create and join public conversations using text. Built with Next.js V13, the app leverages Next.js server functions, Clerk authentication, MongoDB as database, and TypeScript to deliver a fast, secure, and scalable experience. The app also features a stunning UI design powered by Shadcn, a collection of reusable components that you can copy and paste into your apps. Dhaage is more than just a clone, it’s a tribute to the power and beauty of text-based social media. And yeah its completely mobile responsive.',
-        projectThumbnail: '/projects-ss/pl7.png',
-        duration: '1 Month',
-        techstack: 'Next.js, Typescript, MongoDB, Clerk, ShadCn',
-        workDone: 'Fullstack',
-        hostedUrl: 'https://dhaaage.vercel.app',
-        association: 'Personal',
-        images: [
-            '/projects-ss/dhaage-1.png',
-            '/projects-ss/dhaage-2.png',
-            '/projects-ss/dhaage-3.png',
-            '/projects-ss/dhaage-4.png',
-        ],
-    },
-    {
-        projectName: 'VikinX',
-        projectDesc: `My very own startup for motorcycle enthusiasts. Consisting of a client and an admin portal. 
-            developed admin and client from scratch primarily using Next v14 and React v18.
-            VikinX Mission: Our mission is to empower riders with technology that enhances their riding
-            experience, fosters a sense of community, and promotes safety. We aim to provide a platform where
-            riders can connect, share experiences, and manage their rides effortlessly, making every journey a
-            memorable one. Connecting the riders across.`,
-        projectThumbnail: '/projects-ss/pl8.png',
-        duration: '6 Months',
-        techstack: 'Next.js, Typescript, Clerk, NextUI, Firebase, Node.js, Express.js, React.js, Ant Design, Cloudinary, Vercel, Digital Ocean, Tailwind',
-        workDone: 'Fullstack',
-        hostedUrl: 'https://vikinx.in',
-        association: 'Personal',
-        images: [
-            '/projects-ss/vx1.png',
-            '/projects-ss/vx2.png',
-            '/projects-ss/vx3.png',
-            '/projects-ss/vx4.png',
-            '/projects-ss/vx5.png',
-            '/projects-ss/vx6.png',
-            '/projects-ss/vx7.png',
-            '/projects-ss/vx8.png',
-        ],
+        degree: 'Diploma, Computer Engineering',
+        institution: 'Maharashtra State Board of Technical Education',
+        period: '2016 — 2019',
     },
 ];
