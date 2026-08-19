@@ -17,7 +17,7 @@ export const profile = {
     availability: 'Open to senior full-stack & frontend roles',
     headline: ['Ships', 'Hard', 'Things'],
     statement:
-        'I take production systems nobody wants to touch — and rebuild them without breaking what already works.',
+        'Scholarship portals for the Government of India. National disease surveillance. Medical crowdfunding. I build software people depend on.',
     intro:
         '5+ years designing, building and scaling production web applications across SaaS, crowdfunding and government platforms. Legacy-to-modern migrations, authentication systems, and features that move real numbers.',
     summary: [
